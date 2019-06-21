@@ -1,0 +1,27 @@
+<html>
+	<!DOCTYPE html>
+	<head>
+		<title>Barnsley Fern</title>
+		<link rel="stylesheet" type="text/css" href="./css/main.css"/>
+		<meta charset="utf-8"/>
+	</head>
+	<body>
+		<div class="main-content">
+			<div class="container">
+				<h3>Barnsley Fern</h3>
+				<canvas id="barnsley-fern-js">
+					Votre navigateur ne supporte pas HTML5. Merci d'essuyer vos pieds avant d'entrer.
+				</canvas>
+			</div>
+		</div>
+		<!-- Inclusions de nos fichiers Javascript. La librarie qu'on utilise puis notre jeu. -->
+		<script type="text/javascript" src="./lib/coquette.js"></script>
+		<script type="text/javascript" src="./js/barnsley.js"></script>
+		<script type="text/javascript" src="./js/renderer.js"></script>
+		<script type="text/javascript">
+		window.addEventListener('load', function() {
+			new Renderer();
+		});
+		</script>
+	</body>
+</html>
