@@ -4,11 +4,22 @@ class Barnsley
 	{
 		this.x = 0;
 		this.y = 0;
-		this.pointRadius = 6;
+		this.pointRadius = 1;
 	}
 
 	update()
 	{
+	}
+
+	getDotColor()
+	{
+		let colors = [
+			"#36CC7C",
+			"#94D794",
+			"#228765", 
+			"#77A668",
+		];
+		return (colors[Math.floor(Math.random() * (colors.length)) + 0]);
 	}
 
 	drawFilledCircle(ctx, centerX, centerY, radius, color)
@@ -21,7 +32,7 @@ class Barnsley
 
 	draw(ctx)
 	{
-		for (let i = 0; i < 20; i++)
+		for (let i = 0; i < 200; i++)
 		{
 			let nextX, nextY;
 			let r = Math.random();
@@ -41,7 +52,7 @@ class Barnsley
 			// Scaling and positioning
 			let plotX = 600 * (this.x + 3) / 6;
 			let plotY = 800 - 800 * ((this.y + 2) / 14);
-			this.drawFilledCircle(ctx, plotX, plotY, this.pointRadius, "#77A668");
+			this.drawFilledCircle(ctx, plotX, plotY, this.pointRadius, this.getDotColor());
 			this.x = nextX;
 			this.y = nextY;
 		}
